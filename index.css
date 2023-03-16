@@ -1,0 +1,26 @@
+html {
+    background-color: #faf9f6;
+}
+
+body {
+    max-width: 76ch;
+    padding: 3em 1em;
+    margin: auto;
+    line-height: 1.75;
+    font-size: 1.25em;
+    font-family: system-ui;
+    color: #444;
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style-type: square;
+}
+
+@media print {
+    html,
+    body {
+        background-color: unset;
+        color: unset;
+    }
+}
