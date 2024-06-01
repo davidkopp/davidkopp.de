@@ -2,8 +2,9 @@
 ## Auto update NetGuard blocklist
 ## https://www.kuketz-blog.de/netguard-datenverkehr-von-android-apps-filtern-privatsphaere-schuetzen/
 
-mkdir tmp
-cd tmp
+set -e
+
+mkdir -p /tmp && cd /tmp
 
 # Download blocklists
 curl -s https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts > netguard_steven
@@ -20,4 +21,4 @@ cat netguard_steven netguard_energized_blu netguard_android_tracking_clean > net
 # sed -i '/0.0.0.0 example.com/d' netguard_blocklist
 
 # Copy blocklist to webserver folder
-cp netguard_blocklist ../public/
+cp netguard_blocklist /var/www/www.davidkopp.de/
